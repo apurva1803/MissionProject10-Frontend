@@ -1,6 +1,8 @@
 FROM nginx:alpine
 
-COPY dist/project10-ui/ /usr/share/nginx/html
+RUN rm -rf /usr/share/nginx/html/*
+
+COPY dist/project10-ui/ /usr/share/nginx/html/
 
 EXPOSE 80
 
