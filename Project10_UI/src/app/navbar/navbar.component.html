@@ -271,6 +271,39 @@
             </li>
 
 
+            <!-- USE CASE -->
+            <li class="nav-item dropdown order-4" *ngIf="canAccess('hotel')">
+
+               <a class="nav-link dropdown-toggle text-white px-3 py-3"
+                  href="#"
+                  data-bs-toggle="dropdown">
+
+                  <i class="bi bi-building me-1"></i>
+                  UseCase
+
+               </a>
+
+               <ul class="dropdown-menu dropdown-menu-dark shadow border-0 rounded-3"
+                  style="background: transparent">
+
+                  <li>
+                     <a class="dropdown-item" [routerLink]="['/hotel']">
+                        <i class="bi bi-plus-circle me-2 text-success"></i>
+                        Add Hotel
+                     </a>
+                  </li>
+                  <li>
+                     <a class="dropdown-item" [routerLink]="['/hotellist']">
+                        <i class="bi bi-building me-2 text-primary"></i>
+                        Hotel List
+                     </a>
+                  </li>
+
+               </ul>
+
+            </li>
+
+
             </ul>
 
             <!-- PROFILE -->

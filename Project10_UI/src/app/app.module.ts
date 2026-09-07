@@ -40,6 +40,8 @@ import { MarksheetmeritlistComponent } from './marksheet/marksheetmeritlist.comp
 import { GetmarksheetComponent } from './marksheet/getmarksheet.component';
 import { ChangepasswordComponent } from './user/changepassword.component';
 import { MyprofileComponent } from './user/myprofile.component';
+import { HotelComponent } from './hotel/hotel.component';
+import { HotellistComponent } from './hotel/hotellist.component';
 
 
 @NgModule({
@@ -73,7 +75,9 @@ import { MyprofileComponent } from './user/myprofile.component';
     MarksheetmeritlistComponent,
     GetmarksheetComponent,
     ChangepasswordComponent,
-    MyprofileComponent
+    MyprofileComponent,
+    HotelComponent,
+    HotellistComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,22 @@
+<div class="container py-4">
+   <div class="card shadow border-0 rounded-4 mx-auto" style="max-width: 650px;">
+      <div class="card-header text-white text-center rounded-top-4" style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
+         <h2 class="mb-0 fw-bold" *ngIf="!form.data.id"><i class="bi bi-person-plus me-2"></i>Add Hotel</h2>
+         <h2 class="mb-0 fw-bold" *ngIf="form.data.id > 0"><i class="bi bi-pencil-square me-2"></i>Update Hotel</h2>
+      </div>
+      <div class="card-body p-4">
+         <div class="alert alert-success text-center" *ngIf="!form.error && form.message"><i class="bi bi-check-circle me-2"></i>{{ form.message }}</div>
+         <div class="alert alert-danger text-center" *ngIf="form.error && form.message"><i class="bi bi-exclamation-triangle me-2"></i>{{ form.message }}</div>
+         <div class="mb-3"><label class="form-label fw-bold">Hotel Name <span class="text-danger">*</span></label><input type="text" name="hotelName" class="form-control" [(ngModel)]="form.data.hotelName" placeholder="Enter Hotel Name"><div class="text-danger small mt-1" *ngIf="form.inputerror.hotelName">{{ form.inputerror.hotelName }}</div></div>
+         <div class="mb-3"><label class="form-label fw-bold">Location <span class="text-danger">*</span></label><input type="text" name="location" class="form-control" [(ngModel)]="form.data.location" placeholder="Enter Location"><div class="text-danger small mt-1" *ngIf="form.inputerror.location">{{ form.inputerror.location }}</div></div>
+         <div class="mb-3"><label class="form-label fw-bold">Rating <span class="text-danger">*</span></label><input type="text" name="rating" class="form-control" [(ngModel)]="form.data.rating" placeholder="Enter Rating"><div class="text-danger small mt-1" *ngIf="form.inputerror.rating">{{ form.inputerror.rating }}</div></div>
+         <div class="mb-3"><label class="form-label fw-bold">Contact Number <span class="text-danger">*</span></label><input type="text" name="contactNo" class="form-control" [(ngModel)]="form.data.contactNo" placeholder="Enter Contact Number"><div class="text-danger small mt-1" *ngIf="form.inputerror.contactNo">{{ form.inputerror.contactNo }}</div></div>
+         
+         <div class="text-center">
+            <button type="button" class="btn btn-primary px-4 me-2" (click)="submit()"><i class="bi bi-save me-2"></i>Save</button>
+            <button type="button" class="btn btn-outline-primary px-4" (click)="forward('/hotellist')"><i class="bi bi-list-ul me-2"></i>List</button>
+         </div>
+      </div>
+   </div>
+</div>
+<app-footer></app-footer>

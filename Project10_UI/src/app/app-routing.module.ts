@@ -26,6 +26,8 @@ import { SignupComponent } from './login/signup.component';
 import { ForgotpasswordComponent } from './login/forgotpassword.component';
 import { ChangepasswordComponent } from './user/changepassword.component';
 import { MyprofileComponent } from './user/myprofile.component';
+import { HotellistComponent } from './hotel/hotellist.component';
+import { HotelComponent } from './hotel/hotel.component';
 
 
 
@@ -175,7 +177,22 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
-  }
+  },
+  {
+    path: 'hotel',
+    component: HotelComponent
+  },
+
+  {
+    path: 'hotel/:id',
+    component: HotelComponent
+  },
+  
+  {
+    path: 'hotellist',
+    component: HotellistComponent
+  },
+
 ];
 
 @NgModule({
