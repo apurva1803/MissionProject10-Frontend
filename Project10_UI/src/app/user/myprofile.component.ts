@@ -15,7 +15,7 @@ export class MyprofileComponent extends BaseCtl {
 
   myProfile() {
     var _self = this;
-    this.serviceLocator.httpService.post('http://localhost:8080/User/myProfile', this.form.data, function (res: any) {
+    this.serviceLocator.httpService.post('http://localhost:8888/User/myProfile', this.form.data, function (res: any) {
       _self.form.message = '';
       _self.form.inputerror = {};
       if (res.success) {

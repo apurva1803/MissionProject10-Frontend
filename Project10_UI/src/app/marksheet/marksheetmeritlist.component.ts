@@ -23,7 +23,7 @@ export class MarksheetmeritlistComponent extends BaseCtl {
 
   getMeritList() {
     this.httpservice.get(
-      "http://localhost:8080/Marksheet/meritlist",
+      "http://localhost:8888/Marksheet/meritlist",
       (res: any) => {
 
         if (res.success) {
@@ -55,7 +55,7 @@ export class MarksheetmeritlistComponent extends BaseCtl {
     }
 
     // Add query parameter for merit list report
-    const reportUrl = "http://localhost:8080/jasper/report?reportName=meritlist";
+    const reportUrl = "http://localhost:8888/jasper/report?reportName=meritlist";
     
     console.log("Print Report - Token:", token ? "Present" : "Missing");
     console.log("Report URL:", reportUrl);

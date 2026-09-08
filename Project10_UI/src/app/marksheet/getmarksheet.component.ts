@@ -42,7 +42,7 @@ export class GetmarksheetComponent extends BaseCtl {
     console.log("Calling API with RollNo:", this.form.data.rollNo);
 
     this.httpservice.get(
-      "http://localhost:8080/Marksheet/rollno/" + this.form.data.rollNo,
+      "http://localhost:8888/Marksheet/rollno/" + this.form.data.rollNo,
       (res: any) => {   // ✅ arrow function (VERY IMPORTANT)
 
         console.log("API Response:", res);

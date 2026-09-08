@@ -10,6 +10,10 @@
          style="object-fit: contain;">
    </a>
 
+   <span *ngIf="!isLogin()" class="text-light fw-semibold ms-3">
+      {{ 'Greetings.HiGuest' | translate }}
+   </span>
+
    <div class="container-fluid px-4">
 
       <!-- Mobile Toggle -->
@@ -22,6 +26,13 @@
 
       </button>
 
+      <div class="d-flex align-items-center text-white me-3">
+         <h3 *ngIf="isLogin()" class="mb-0 fs-6 fw-bold text-nowrap">
+            {{ 'Greetings.HiUser' | translate:{name: form.data.fname, role: form.data.role} }}
+         </h3>
+         
+      </div>
+
 
       <!-- ================= LOGIN ================= -->
 
@@ -30,20 +41,6 @@
          *ngIf="isLogin()">
 
          <div class="d-flex align-items-center w-100">
-
-            <!-- User Name -->
-            <div class="navbar-brand text-white mb-0 me-3">
-
-               <div class="fw-bold fs-5">
-                  Welcome, {{form.data.fname}}
-               </div>
-
-               <small class="text-light opacity-75">
-                  {{form.data.role}}
-               </small>
-
-            </div>
-
 
             <!-- ================= MENU ================= -->
 
@@ -68,13 +65,13 @@
                   <li *ngIf="canAccess('college')">
                      <a class="dropdown-item" [routerLink]="['/college']">
                         <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add College
+                        {{ 'Links.AddCollege' | translate }}
                      </a>
                   </li>
                   <li *ngIf="canAccess('college')">
                      <a class="dropdown-item" [routerLink]="['/collegelist']">
                         <i class="bi bi-building me-2 text-primary"></i>
-                        College List
+                        {{ 'Links.CollegeList' | translate }}
                      </a>
                   </li>
 
@@ -83,13 +80,13 @@
                   <li *ngIf="canAccess('course')">
                      <a class="dropdown-item" [routerLink]="['/course']">
                         <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add Course
+                        {{ 'Links.AddCourse' | translate }}
                      </a>
                   </li>
                   <li *ngIf="canAccess('course')">
                      <a class="dropdown-item" [routerLink]="['/courselist']">
                         <i class="bi bi-book me-2 text-primary"></i>
-                        Course List
+                        {{ 'Links.CourseList' | translate }}
                      </a>
                   </li>
 
@@ -98,13 +95,13 @@
                   <li *ngIf="canAccess('subject') && !isStudentRole()">
                      <a class="dropdown-item" [routerLink]="['/subject']">
                         <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add Subject
+                        {{ 'Links.AddSubject' | translate }}
                      </a>
                   </li>
                   <li *ngIf="canAccess('subject')">
                      <a class="dropdown-item" [routerLink]="['/subjectlist']">
                         <i class="bi bi-journal-text me-2 text-primary"></i>
-                        Subject List
+                        {{ 'Links.SubjectList' | translate }}
                      </a>
                   </li>
 
@@ -113,13 +110,13 @@
                   <li *ngIf="canAccess('timetable') && !isStudentRole()">
                      <a class="dropdown-item" [routerLink]="['/timetable']">
                         <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add Timetable
+                        {{ 'Links.AddTimetable' | translate }}
                      </a>
                   </li>
                   <li *ngIf="canAccess('timetable')">
                      <a class="dropdown-item" [routerLink]="['/timetablelist']">
                         <i class="bi bi-calendar3 me-2 text-primary"></i>
-                        Timetable List
+                        {{ 'Links.TimetableList' | translate }}
                      </a>
                   </li>
 
@@ -149,7 +146,7 @@
                         [routerLink]="['/marksheet']">
 
                         <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add Marksheet
+                        {{ 'Links.AddMarksheet' | translate }}
 
                      </a>
                   </li>
@@ -159,7 +156,7 @@
                         [routerLink]="['/marksheetlist']">
 
                         <i class="bi bi-clipboard me-2 text-primary"></i>
-                        Marksheet List
+                        {{ 'Links.MarksheetList' | translate }}
 
                      </a>
                   </li>
@@ -211,13 +208,13 @@
                   <li *ngIf="canAccess('role')">
                      <a class="dropdown-item" [routerLink]="['/role']">
                         <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add Role
+                        {{ 'Links.AddRole' | translate }}
                      </a>
                   </li>
                   <li *ngIf="canAccess('role')">
                      <a class="dropdown-item" [routerLink]="['/rolelist']">
                         <i class="bi bi-shield-check me-2 text-primary"></i>
-                        Role List
+                        {{ 'Links.RoleList' | translate }}
                      </a>
                   </li>
 
@@ -226,13 +223,13 @@
                   <li *ngIf="canAccess('user')">
                      <a class="dropdown-item" [routerLink]="['/user']">
                         <i class="bi bi-person-plus me-2 text-success"></i>
-                        Add User
+                        {{ 'Links.AddUser' | translate }}
                      </a>
                   </li>
                   <li *ngIf="canAccess('user')">
                      <a class="dropdown-item" [routerLink]="['/userlist']">
                         <i class="bi bi-person-lines-fill me-2 text-primary"></i>
-                        User List
+                        {{ 'Links.UserList' | translate }}
                      </a>
                   </li>
 
@@ -241,13 +238,13 @@
                   <li *ngIf="canAccess('student')">
                      <a class="dropdown-item" [routerLink]="['/student']">
                         <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add Student
+                        {{ 'Links.AddStudent' | translate }}
                      </a>
                   </li>
                   <li *ngIf="canAccess('student')">
                      <a class="dropdown-item" [routerLink]="['/studentlist']">
                         <i class="bi bi-person me-2 text-primary"></i>
-                        Student List
+                        {{ 'Links.StudentList' | translate }}
                      </a>
                   </li>
 
@@ -256,13 +253,13 @@
                   <li *ngIf="canAccess('faculty')">
                      <a class="dropdown-item" [routerLink]="['/faculty']">
                         <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add Faculty
+                        {{ 'Links.AddFaculty' | translate }}
                      </a>
                   </li>
                   <li *ngIf="canAccess('faculty')">
                      <a class="dropdown-item" [routerLink]="['/facultylist']">
                         <i class="bi bi-person-badge me-2 text-primary"></i>
-                        Faculty List
+                        {{ 'Links.FacultyList' | translate }}
                      </a>
                   </li>
 
@@ -306,8 +303,21 @@
 
             </ul>
 
+            <div class="d-flex align-items-center gap-2 me-2">
+               
+               <select #locale
+                  class="form-select form-select-sm w-auto bg-transparent text-white border-light text-center"
+                  style="text-align-last: center;"
+                  [value]="selectedLocale"
+                  (change)="changeLocale(locale.value)">
+                  <option class="text-center" value="0">Language</option>
+                  <option class="text-center" value="en">{{ 'LocaleSelect.English' | translate }}</option>
+                  <option class="text-center" value="hi">{{ 'LocaleSelect.Hindi' | translate }}</option>
+               </select>
+            </div>
+
             <!-- PROFILE -->
-            <div class="dropdown ms-auto">
+            <div class="dropdown">
                <a class="nav-link dropdown-toggle text-white px-3 py-2"
                   href="#"
                   data-bs-toggle="dropdown">
@@ -356,9 +366,15 @@
 
          <div class="d-flex align-items-center gap-2 ms-auto">
 
-            <span class="text-light fw-semibold">
-               Hi, Guest
-            </span>
+            <select #guestLocale
+               class="form-select form-select-sm w-auto bg-transparent text-white border-light text-center"
+               style="text-align-last: center;"
+               [value]="selectedLocale"
+               (change)="changeLocale(guestLocale.value)">
+               <option class="text-center" value="0">Language</option>
+               <option class="text-center" value="en">{{ 'LocaleSelect.English' | translate }}</option>
+               <option class="text-center" value="hi">{{ 'LocaleSelect.Hindi' | translate }}</option>
+            </select>
 
             <a class="btn btn-sm btn-outline-info px-3"
                [routerLink]="['/dashboard']">

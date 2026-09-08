@@ -25,7 +25,7 @@
             <div class="signup-form">
                 <div class="row g-3">
                     <div class="col-md-6">
-                        <label class="form-label" for="firstName">First Name <span class="text-danger">*</span></label>
+                        <label class="form-label" for="firstName">{{ 'FirstName' | translate }} <span class="text-danger">*</span></label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-person"></i></span>
                             <input id="firstName" type="text" class="form-control" name="firstName" [(ngModel)]="form.data.firstName" placeholder="Enter first name" required>
@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label" for="lastName">Last Name <span class="text-danger">*</span></label>
+                        <label class="form-label" for="lastName">{{ 'LastName' | translate }} <span class="text-danger">*</span></label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-person"></i></span>
                             <input id="lastName" type="text" class="form-control" name="lastName" [(ngModel)]="form.data.lastName" placeholder="Enter last name" required>
@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="col-12">
-                        <label class="form-label" for="loginId">Login ID <span class="text-danger">*</span></label>
+                        <label class="form-label" for="loginId">{{ 'LoginId' | translate }}<span class="text-danger">*</span></label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
                             <input id="loginId" type="text" class="form-control" name="loginId" [(ngModel)]="form.data.loginId" placeholder="Enter login ID" required>
@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label" for="password">Password <span class="text-danger">*</span></label>
+                        <label class="form-label" for="password">{{ 'Password' | translate }} <span class="text-danger">*</span></label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-lock"></i></span>
                             <input id="password" type="password" class="form-control" name="password" [(ngModel)]="form.data.password" placeholder="Enter password" required>
@@ -61,23 +61,23 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label" for="dob">Date of Birth <span class="text-danger">*</span></label>
+                        <label class="form-label" for="dob">{{ 'DateOfBirth' | translate }} <span class="text-danger">*</span></label>
                         <input id="dob" type="date" class="form-control" name="dob" [(ngModel)]="form.data.dob" required>
                         <div class="text-danger small mt-1" *ngIf="form.inputerror.dob">{{ form.inputerror.dob }}</div>
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label" for="gender">Gender <span class="text-danger">*</span></label>
+                        <label class="form-label" for="gender">{{ 'Gender' | translate }} <span class="text-danger">*</span></label>
                         <select id="gender" class="form-select" name="gender" [(ngModel)]="form.data.gender" required>
-                            <option [ngValue]="undefined">Select gender</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+                            <option [ngValue]="undefined">{{ 'GenderOptions.Select' | translate }}</option>
+                            <option value="Male">{{ 'GenderOptions.Male' | translate }}</option>
+                            <option value="Female">{{ 'GenderOptions.Female' | translate }}</option>
                         </select>
                         <div class="text-danger small mt-1" *ngIf="form.inputerror.gender">{{ form.inputerror.gender }}</div>
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label" for="phone">Mobile <span class="text-danger">*</span></label>
+                        <label class="form-label" for="phone">{{ 'Mobile' | translate }} <span class="text-danger">*</span></label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-phone"></i></span>
                             <input id="phone" type="tel" class="form-control" name="phone" [(ngModel)]="form.data.phone" maxlength="10" placeholder="Enter mobile number" required>

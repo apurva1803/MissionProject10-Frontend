@@ -8,7 +8,7 @@ import { HttpServiceService } from '../http-service.service';
 })
 export class ForgotpasswordComponent {
 
-  endpoint = "http://localhost:8080/Auth/forgetPassword";
+  endpoint = "http://localhost:8888/Auth/forgetPassword";
 
   form: any = {
     error: false,

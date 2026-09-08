@@ -21,7 +21,7 @@ export class ChangepasswordComponent {
   changePassword() {
     var _self = this;
     this.form.data.loginId = localStorage.getItem("loginId")
-    this.httpService.post("http://localhost:8080/User/changePassword", this.form.data, function (res: any) {
+    this.httpService.post("http://localhost:8888/User/changePassword", this.form.data, function (res: any) {
       _self.form.message = '';
       _self.form.inputerror = {};
       if (res.success) {

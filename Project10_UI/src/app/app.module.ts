@@ -4,6 +4,9 @@ import {
   HTTP_INTERCEPTORS,
   HttpClientModule,
 } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,6 +46,9 @@ import { MyprofileComponent } from './user/myprofile.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { HotellistComponent } from './hotel/hotellist.component';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -83,7 +89,14 @@ import { HotellistComponent } from './hotel/hotellist.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
    providers: [
 

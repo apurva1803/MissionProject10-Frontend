@@ -9,7 +9,7 @@ import { HttpServiceService } from '../http-service.service';
 })
 export class LoginComponent {
 
-  endpoint = "http://localhost:8080/Auth/login";
+  endpoint = "http://localhost:8888/Auth/login";
 
   form: any = {
     error: false,
