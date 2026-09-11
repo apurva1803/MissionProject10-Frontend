@@ -12,9 +12,72 @@
     "DateOfBirth": "जन्म तिथि",
     "Gender": "लिंग",
     "Mobile": "मोबाइल",
+    "AlternateMobile": "वैकल्पिक मोबाइल",
+    "status": "स्थिति",
+    "Physics": "भौतिकी",
+    "Chemistry": "रसायन विज्ञान",   
+    "Maths": "गणित",
+    "PrintReport": "रिपोर्ट प्रिंट करें",
+    "EmailId" : "ईमेल आईडी",
+    "EnrolNo." : "पंजीकरण संख्या",
+    "Image" : "छवि",
+
+    "Address": "पता",
+    "State": "राज्य",
+    "City": "शहर",
+    "Phone": "फ़ोन",
+    "RollNO": "रोल नंबर",
+    "Duration": "अवधि",
+    "Qualification": "योग्यता",
+    "College": "कॉलेज",   
+    "Course": "कोर्स",
+    "Subject": "विषय",
+    "Semester": "सेमेस्टर",
+    "ExamDate": "परीक्षा की तारीख",
+    "ExamTime": "परीक्षा का समय",
+
+    "Role": "भूमिका",
+    "User": "उपयोगकर्ता",
+    "Marksheets": "मार्कशीट",
+    "Colleges": "कॉलेज",
+    "Students": "छात्र",
+    "Faculty": "फैकल्टी",
+    "Courses": "कोर्स",
+    "Subjects": "विषय",
+    "Timetables": "टाइमटेबल",
+
+    "Manage user roles.": "उपयोगकर्ता भूमिकाओं का प्रबंधन करें।",
+    "Manage system users.": "सिस्टम उपयोगकर्ताओं का प्रबंधन करें।",
+    "Manage student marksheets.": "छात्र मार्कशीट का प्रबंधन करें।",  
+    "Manage college records.": "कॉलेज रिकॉर्ड का प्रबंधन करें।",      
+    "Manage student information.": "छात्र जानकारी का प्रबंधन करें।",
+    "Manage faculty details.": "फैकल्टी विवरण का प्रबंधन करें।",
+    "Manage course records.": "कोर्स रिकॉर्ड का प्रबंधन करें।",
+    "Manage subject details.": "विषय विवरण का प्रबंधन करें।",
+    "Manage timetable schedules.": "टाइमटेबल शेड्यूल का प्रबंधन करें।",
+
+    "ChangePassword": "पासवर्ड बदलें",
+    "OldPassword": "पुराना पासवर्ड",
+    "NewPassword": "नया पासवर्ड",
+    "Name": "नाम",
+    "Description": "विवरण",
+    "PoweredByRaysTechnologies": "Rays Technologies द्वारा संचालित",
+    "WelcomeToOnlineResultSystem": "ऑनलाइन परिणाम प्रणाली में आपका स्वागत है",
+    "SimplifiedAcademicManagement": "सरल शैक्षणिक प्रबंधन.",
+    "OnlineResultSystem": "ऑनलाइन परिणाम प्रणाली",
+    "2025RaysEdTech": "2025 Rays EdTech",
+    "AllRightsReserved": "सर्वाधिकार सुरक्षित",
+
+
+
     "Buttons": {
         "SignUp": "साइन अप",
-        "Reset": "रीसेट"
+        "Reset": "रीसेट",
+        "delete": "हटाएं",
+        "New": "नया",
+        "Save": "सहेजें",
+        "Update": "अपडेट" ,
+        "List": "सूची"   
     },
     "GenderOptions": {
         "Select": "------------चुनें------------",
@@ -29,6 +92,7 @@
         "MyProfile": "मेरा प्रोफ़ाइल",
         "ChangePassword": "पासवर्ड बदलें",
         "AddUser": "उपयोगकर्ता जोड़ें",
+        "UpdateUser": "उपयोगकर्ता अपडेट करें",
         "UserList": "उपयोगकर्ता सूची",
         "AddRole": "भूमिका जोड़ें",
         "RoleList": "भूमिका सूची",
@@ -48,7 +112,16 @@
         "FacultyList": "फैकल्टी सूची",
         "Logout": "लॉगआउट",
         "Dashboard": "डैशबोर्ड",
-        "Login": "लॉगिन"
+        "Login": "लॉगिन",
+        "Academics": "शैक्षणिक",
+        "Marksheet": "मार्कशीट",
+        "MarksheetMeritList": "मार्कशीट मेरिट सूची",
+        "GetMarksheet": "मार्कशीट प्राप्त करें",
+        "People": "लोग",
+        "UseCases": "उपयोग के मामले",
+        "AddHotel": "होटल जोड़ें",
+        "HotelList": "होटल सूची",
+        "Profile": "प्रोफ़ाइल"
     },
     "LocaleSelect": {
         "Select": "-------चुनें-------",
@@ -68,6 +141,9 @@
         "Mobile": "मोबाइल",
         "AlternateMobile": "वैकल्पिक मोबाइल",
         "Status": "स्थिति",
+        "SNo": "क्रमांक",
+        "Email": "ईमेल",
+        "No users found": "कोई उपयोगकर्ता नहीं मिला",
         "Placeholders": {
             "FirstName": "पहला नाम दर्ज करें",
             "LastName": "अंतिम नाम दर्ज करें",
@@ -86,7 +162,16 @@
         },
         "Buttons": {
             "Save": "सहेजें",
-            "List": "सूची"
+            "List": "सूची",
+            "Reset": "रीसेट",
+            "Back": "वापस",
+            "Search": "खोज",
+            "Edit": "संपादित करें",
+            "Update": "अपडेट",
+            "previous": "पिछला",
+            "next": "अगला",
+            "delete": "हटाएं",
+            "New": "नया"
         }
     }
 }

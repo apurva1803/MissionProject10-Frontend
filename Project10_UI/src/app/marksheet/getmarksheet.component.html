@@ -51,14 +51,14 @@
                     <div class="col-md-9">
 
                         <label class="form-label fw-bold">
-                            Roll No
+                            {{ 'RollNO' | translate }}
                         </label>
 
                         <input type="text"
                             class="form-control"
                             name="rollNo"
                             [(ngModel)]="form.data.rollNo"
-                            placeholder="Enter Roll No">
+                            placeholder="{{ 'RollNO' | translate }}">
 
                         <div class="text-danger small">
                             {{form.inputerror.rollNo}}
@@ -109,12 +109,12 @@
             <div class="row mb-4">
 
                 <div class="col-md-6">
-                    <strong>Roll No :</strong>
+                    <strong>{{ 'RollNO' | translate }} :</strong>
                     {{form.list.rollNo}}
                 </div>
 
                 <div class="col-md-6 text-md-end">
-                    <strong>Name :</strong>
+                    <strong>{{ 'Name' | translate }} :</strong>
                     {{form.list.name}}
                 </div>
 
@@ -126,10 +126,10 @@
                 <thead class="table-dark">
 
                     <tr>
-                        <th>Subject</th>
+                        <th>{{ 'Subject' | translate }}</th>
                         <th>Marks Obtained</th>
                         <th>Maximum Marks</th>
-                        <th>Status</th>
+                        <th>{{ 'UserForm.Status' | translate }}</th>
                     </tr>
 
                 </thead>
@@ -137,7 +137,7 @@
                 <tbody>
 
                     <tr>
-                        <td>Physics</td>
+                        <td>{{ 'Physics' | translate }}</td>
                         <td>{{form.list.physics}}</td>
                         <td>100</td>
 
@@ -155,7 +155,7 @@
                     </tr>
 
                     <tr>
-                        <td>Chemistry</td>
+                        <td>{{ 'Chemistry' | translate }}</td>
                         <td>{{form.list.chemistry}}</td>
                         <td>100</td>
 
@@ -173,7 +173,7 @@
                     </tr>
 
                     <tr>
-                        <td>Maths</td>
+                        <td>{{ 'Maths' | translate }}</td>
                         <td>{{form.list.maths}}</td>
                         <td>100</td>
 

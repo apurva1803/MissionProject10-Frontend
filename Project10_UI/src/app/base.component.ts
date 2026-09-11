@@ -7,6 +7,7 @@ import { ActivatedRoute } from "@angular/router";
 export class BaseCtl implements OnInit {
 
     public form: any = {
+
         error: false, //error 
         inputerror: {}, // form input error messages
         message: null, //error or success message
@@ -16,6 +17,7 @@ export class BaseCtl implements OnInit {
         list: [], // search list 
         pageNo: 0,
         nextListSize: 0
+        
     };
 
     public api: any = {
@@ -65,30 +67,16 @@ export class BaseCtl implements OnInit {
     }
 
     
-    submit() {
-        var _self = this;
-        this.serviceLocator.httpService.post(this.api.save, this.form.data, function (res: any) {
-            _self.form.message = '';
-            _self.form.inputerror = {};
-            if (res.success) {
-                _self.form.error = false;
-                _self.form.message = res.result.message;
-                _self.form.data.id = res.result.data;
-            } else {
-                _self.form.error = true;
-                if (res.result.inputerror) {
-                    _self.form.inputerror = res.result.inputerror;
-                }
-                _self.form.message = res.result.message;
-            }
-        });
-    }
     getRole(): string {
         return (localStorage.getItem('role') || '').trim().toLowerCase();
     }
 
     isStudentRole(): boolean {
         return this.getRole() === 'student';
+    }
+
+    isEditMode(): boolean {
+        return Number(this.form.data.id) > 0;
     }
 
     search() {
@@ -134,15 +122,56 @@ export class BaseCtl implements OnInit {
     reset() {
         location.reload();
     }
+    
     display() {
+    var _self = this;
+    this.serviceLocator.httpService.get(
+      _self.api.get + '/' + _self.form.data.id,
+      function (res: any) {
+        if (res.success) {
+          _self.form.data = res.result.data;
+        } else {
+          _self.form.error = true;
+          _self.form.message = res.result.message;
+        }
+      },
+    );
+    }
+
+    submit(callback?: (id: any) => void) {
         var _self = this;
-        this.serviceLocator.httpService.get(_self.api.get + "/" + _self.form.data.id, function (res: any) {
+
+        this.serviceLocator.httpService.post(this.api.save, this.form.data,function (res: any) {
+            // reset
+            _self.form.message = '';
+            _self.form.inputerror = {};
+            _self.form.error = false;
+
             if (res.success) {
-                _self.form.data = res.result.data;
-            } else {
-                _self.form.error = true;
-                _self.form.message = res.result.message;
+            // ✅ success message
+            _self.form.message = res.result.message;
+
+            // ✅ ID set (IMPORTANT)
+            _self.form.data.id = res.result.data;
+
+            // ✅ callback call (for image upload etc.)
+            if (callback) {
+                callback(_self.form.data.id);
             }
-        });
+            } else {
+            // ❌ validation error
+            _self.form.error = true;
+
+            if (res.result.inputerror) {
+                _self.form.inputerror = res.result.inputerror;
+            }
+
+            _self.form.message = res.result.message;
+
+            console.log('Validation Error:', res.result);
+            }
+        },
+        );
+
     }
 }

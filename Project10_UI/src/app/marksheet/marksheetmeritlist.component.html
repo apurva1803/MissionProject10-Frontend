@@ -21,7 +21,7 @@
             <button class="btn btn-primary btn-lg shadow-sm px-4 rounded-pill" (click)="printReport()">
 
                 <i class="bi bi-printer-fill me-2"></i>
-                Print Report
+                {{'PrintReport' | translate}}
 
             </button>
 
@@ -34,12 +34,12 @@
 
                 <thead class="table-light">
                     <tr>
-                        <th class="text-center">{{'S.No' }}</th>
-                        <th>{{'RollNO'}}</th>
-                        <th>{{'Name'}}</th>
-                        <th class="text-center">{{'Physics' }}</th>
-                        <th class="text-center">{{'Chemistry'}}</th>
-                        <th class="text-center">{{'Maths' }}</th>
+                        <th class="text-center">{{ 'UserForm.SNo' | translate }}</th>
+                        <th>{{ 'RollNO' | translate }}</th>
+                        <th>{{ 'Name' | translate }}</th>
+                        <th class="text-center">{{ 'Physics' | translate }}</th>
+                        <th class="text-center">{{ 'Chemistry' | translate }}</th>
+                        <th class="text-center">{{ 'Maths' | translate }}</th>
                         <th class="text-center">{{'Total' }}</th>
                         <th class="text-center">{{'Percentage(%)'}}</th>
                     </tr>

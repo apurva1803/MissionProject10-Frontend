@@ -10,12 +10,12 @@
 
          <h2 class="mb-0 fw-bold" *ngIf="!form.data.id">
             <i class="bi bi-shield-plus me-2"></i>
-            Add Role
+            {{'Links.AddRole' | translate}}
          </h2>
 
          <h2 class="mb-0 fw-bold" *ngIf="form.data.id > 0">
             <i class="bi bi-pencil-square me-2"></i>
-            Update Role
+            {{'Links.UpdateRole' | translate}}
          </h2>
 
       </div>
@@ -49,7 +49,7 @@
          <div class="mb-3">
 
             <label class="form-label fw-bold">
-               Name
+               {{'Name' | translate}}
                <span class="text-danger">*</span>
             </label>
 
@@ -74,7 +74,7 @@
          <div class="mb-4">
 
             <label class="form-label fw-bold">
-               Description
+               {{'Description' | translate}}
                <span class="text-danger">*</span>
             </label>
 
@@ -105,7 +105,7 @@
                (click)="submit()">
 
                <i class="bi bi-save me-2"></i>
-               Save
+               {{ (isEditMode() ? 'Buttons.Update' : 'Buttons.Save') | translate }}
 
             </button>
 
@@ -115,7 +115,7 @@
                (click)="forward('/rolelist')">
 
                <i class="bi bi-list-ul me-2"></i>
-               List
+               {{'Buttons.List' | translate}}
 
             </button>
 

@@ -12,9 +12,71 @@
     "DateOfBirth": "Date of Birth",
     "Gender": "Gender",
     "Mobile": "Mobile",
+    "AlternateMobile": "Alternate Mobile",
+    "status": "Status",
+    "Physics": "Physics",
+    "Chemistry": "Chemistry",
+    "Maths": "Maths",
+    "PrintReport": "Print Report",
+    "EmailId" : "Email Id",
+    "EnrolNo." : "Enrollment No.",
+    "Image" : "Image",
+
+    "Address": "Address",
+    "State": "State",
+    "City": "City",
+    "Phone": "Phone",
+    "RollNO": "Roll No",
+    "Duration": "Duration",
+    "Qualification": "Qualification",
+    "College": "College",
+    "Course": "Course",
+    "Subject": "Subject",
+    "Semester": "Semester",
+    "ExamDate": "Exam Date",
+    "ExamTime": "Exam Time",
+
+    "Role": "Role",
+    "User": "User",
+    "Marksheets": "Marksheets",
+    "Colleges": "Colleges",
+    "Students": "Students",
+    "Faculty": "Faculty",
+    "Courses": "Courses",
+    "Subjects": "Subjects",
+    "Timetables": "Timetables",
+
+    "Manage user roles.": "Manage user roles.",
+    "Manage system users.": "Manage system users.",
+    "Manage student marksheets.": "Manage student marksheets.",
+    "Manage college records.": "Manage college records.",
+    "Manage student information.": "Manage student information.",
+    "Manage faculty details.": "Manage faculty details.",
+    "Manage course records.": "Manage course records.",
+    "Manage subject details.": "Manage subject details.",
+    "Manage timetable schedules.": "Manage timetable schedules.",
+
+    "ChangePassword": "Change Password",
+    "OldPassword": "Old Password",
+    "NewPassword": "New Password",
+    "Name": "Name",
+    "Description": "Description",
+    "PoweredByRaysTechnologies": "Powered by Rays Technologies",
+    "WelcomeToOnlineResultSystem": "Welcome to Online Result System",
+    "SimplifiedAcademicManagement": "Simplified Academic Management.",
+    "OnlineResultSystem": "Online Result System",
+    "2025RaysEdTech": "2025 Rays EdTech",
+    "AllRightsReserved": "All Rights Reserved",
+
+
     "Buttons": {
         "SignUp": "Sign Up",
-        "Reset": "Reset"
+        "Reset": "Reset",
+        "delete": "Delete",
+        "New": "New",
+        "Save": "Save",
+        "Update": "Update",
+        "List": "List"
     },
     "GenderOptions": {
         "Select": "------------Select------------",
@@ -29,6 +91,7 @@
         "MyProfile": "My Profile",
         "ChangePassword": "Change Password",
         "AddUser": "Add User",
+        "UpdateUser": "Update User",
         "UserList": "User List",
         "AddRole": "Add Role",
         "RoleList": "Role List",
@@ -48,7 +111,16 @@
         "FacultyList": "Faculty List",
         "Logout": "Logout",
         "Dashboard": "Dashboard",
-        "Login": "Login"
+        "Login": "Login",
+        "Academics": "Academics",
+        "Marksheet": "Marksheet",
+        "MarksheetMeritList": "Marksheet Merit List",
+        "GetMarksheet": "Get Marksheet",
+        "People": "People",
+        "UseCases": "Use Cases",
+        "AddHotel": "Add Hotel",
+        "HotelList": "Hotel List",
+        "Profile": "Profile"
     },
     "LocaleSelect": {
         "Select": "-------Select-------",
@@ -68,6 +140,9 @@
         "Mobile": "Mobile",
         "AlternateMobile": "Alternate Mobile",
         "Status": "Status",
+        "SNo": "S.No",
+        "Email": "Email",
+        "No users found": "No users found",
         "Placeholders": {
             "FirstName": "Enter First Name",
             "LastName": "Enter Last Name",
@@ -86,7 +161,16 @@
         },
         "Buttons": {
             "Save": "Save",
-            "List": "List"
+            "List": "List",
+            "Back": "Back",
+            "Search": "Search",
+            "Reset": "Reset",
+            "Edit": "Edit",
+            "Update": "Update",
+            "previous": "Previous",
+            "next": "Next",
+            "delete": "Delete",
+            "New": "New"
         }
     }
 }
