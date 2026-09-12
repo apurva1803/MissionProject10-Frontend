@@ -67,9 +67,12 @@
                                 <td class="fw-semibold">{{ (form.pageNo * 5) + i + 1 }}</td>
 
                                 <td>   
+                                    
                                     <img *ngIf="m.imageId" [src]="'http://localhost:8888/User/profilePic/' + m.id"
                                         class="img-thumbnail" style="width: 1.5cm; height: 1.5cm; object-fit: cover;">
                                 
+                                    <img *ngIf="!m.imageId" src="assets/files/default.jpeg"
+                                        class="img-thumbnail" style="width: 1.5cm; height: 1.5cm; object-fit: cover;">
                                 </td>
                                 
                                 <td class="fw-semibold">{{ m.firstName }}</td>
