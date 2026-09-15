@@ -26,7 +26,7 @@
                     <div class="col-md-4">
                         <label for="userRoleId" class="form-label fw-bold"><i class="bi bi-shield-check me-1"></i>{{ 'UserForm.Role' | translate }}</label>
                         <select id="userRoleId" name="roleId" class="form-select" [(ngModel)]="form.searchParams.roleId">
-                            <option [ngValue]="undefined">------------ {{ 'UserForm.SelectOptions.Select' | translate }} ------------</option>
+                            <option [ngValue]="undefined">-------------{{ 'UserForm.SelectOptions.Select' | translate }}-------------</option>
                             <option *ngFor="let obj of form.preload.roleList" [ngValue]="obj.key">{{ obj.value }}</option>
                         </select>
                     </div>

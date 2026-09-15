@@ -14,21 +14,7 @@ export class MyprofileComponent extends BaseCtl {
   }
 
   myProfile() {
-    var _self = this;
-    this.serviceLocator.httpService.post('http://localhost:8888/User/myProfile', this.form.data, function (res: any) {
-      _self.form.message = '';
-      _self.form.inputerror = {};
-      if (res.success) {
-        _self.form.message = res.result.message;
-        _self.form.data.id = res.result.data;
-      } else {
-        _self.form.error = true;
-        if (res.result.inputerror) {
-          _self.form.inputerror = res.result.inputerror;
-        }
-        _self.form.message = res.result.message;
-      }
-    });
+    this.submit();
   }
 
 }

@@ -9,7 +9,7 @@ export class DashboardComponent {
 
   isLogin(): boolean {
     const firstName = localStorage.getItem('fname');
-    return firstName !== 'null' && firstName !== null;
+    return firstName !== 'null' && firstName !== null && firstName !== undefined;
   }
 
   getRole(): string {
@@ -28,16 +28,11 @@ export class DashboardComponent {
         .includes(moduleName);
     }
 
-    if (role === 'faculty') {
-      return ['student', 'subject', 'marksheet', 'timetable']
-        .includes(moduleName);
-    }
-
     if (role === 'student') {
       return ['subject', 'marksheet', 'timetable']
         .includes(moduleName);
     }
-
+    
     return false;
   }
 }
