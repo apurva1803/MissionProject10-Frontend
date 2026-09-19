@@ -22,13 +22,15 @@
           <!-- IMAGE -->
          <label><b>{{'Profile Image' | translate }}</b></label>
          <div class="mb-2 text-center">
-               <img *ngIf="imagePreview" [src]="imagePreview" class="img-thumbnail" width="120">
+               <img *ngIf="imagePreview" 
+                     [src]="imagePreview" class="img-thumbnail" width="120">
 
                <img *ngIf="!imagePreview && form.data.imageId"
-                  src="http://localhost:8888/User/profilePic/{{form.data.id}}" class="img-thumbnail"
-                  width="120">
+                  src="http://localhost:8888/User/profilePic/{{form.data.id}}" 
+                  class="img-thumbnail" width="120">
 
-               <img *ngIf="!imagePreview && !form.data.imageId" src="assets/files/default.jpeg"
+               <img *ngIf="!imagePreview && !form.data.imageId" 
+                  src="assets/files/default.jpeg"
                   class="img-thumbnail" width="120">
          </div>
 

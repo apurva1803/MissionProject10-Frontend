@@ -97,8 +97,7 @@ export class BaseCtl implements OnInit {
 
     deleteMany(id: any) {
         var _self = this;
-        var deleteUrl = _self.api.deleteMany + "/" + id + "?pageNo=" + _self.form.pageNo;
-        this.serviceLocator.httpService.post(deleteUrl, this.form.searchParams, function (res: any) {
+        this.serviceLocator.httpService.post(_self.api.deleteMany + "/" + id, this.form.searchParams, function (res: any) {
             _self.form.message = '';
             _self.form.list = [];
             if (res.success) {
@@ -111,8 +110,6 @@ export class BaseCtl implements OnInit {
                 _self.form.message = res.result.message;
             }
         });
-
-        
     }
     
     forward(page: any) {
