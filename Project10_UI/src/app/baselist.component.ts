@@ -14,7 +14,6 @@ export class BaseListCtl extends BaseCtl  {
         super(endpoint, serviceLocator, route);
     }
 
-
     override ngOnInit(): void {
         super.ngOnInit();
         this.search();
@@ -69,7 +68,5 @@ export class BaseListCtl extends BaseCtl  {
 
 
     }
-
-
     
 }

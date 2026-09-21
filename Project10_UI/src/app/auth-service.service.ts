@@ -25,7 +25,7 @@ export class AuthServiceService implements HttpInterceptor {
         setHeaders: {
           withCredentials: 'true',
           name: 'Apurva',
-         Authorization: this.token,
+          Authorization: this.token,
         },
       });
     }
@@ -40,7 +40,6 @@ export class AuthServiceService implements HttpInterceptor {
                     return EMPTY;
 
         }
-
         return throwError(error);
       }),
     );
