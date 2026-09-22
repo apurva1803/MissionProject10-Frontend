@@ -27,54 +27,54 @@ export class HttpServiceService {
     });
   }
 
-  getReport(url: string, token: string) {
-    console.log("getReport() called with URL:", url);
-    
+   getReport(url: string, token: string) {
     this.httpClient
       .get(url, {
         headers: {
           Authorization: 'Bearer ' + token,
         },
         responseType: 'blob',
-        withCredentials: true
       })
-      .subscribe(
-        (res: any) => {
-          console.log("Report received successfully, size:", res.size);
-          const file = new Blob([res], { type: 'application/pdf' });
-          const fileURL = URL.createObjectURL(file);
-          console.log("Opening PDF at:", fileURL);
-          const newWindow = window.open(fileURL);
-          if (!newWindow) {
-            alert('Please allow pop-ups for this site to view the report');
-          }
-        }, 
-        (error: any) => {
-          console.error('Report error details:', error);
-          let errorMsg = 'Failed to generate report';
-          
-          if (error.status === 0) {
-            errorMsg = 'Unable to reach the server. Make sure backend is running.';
-          } else if (error.status === 401) {
-            errorMsg = 'Unauthorized. Please login again.';
-          } else if (error.status === 404) {
-            errorMsg = 'Report endpoint not found.';
-          } else if (error.status === 500) {
-            errorMsg = 'Server error while generating report.';
-          }
-          
-          alert(errorMsg);
-          this.handleError(error);
-        }
-      );
+      .subscribe((res: any) => {
+        const file = new Blob([res], { type: 'application/pdf' });
+        const fileURL = URL.createObjectURL(file);
+        window.open(fileURL);
+      }, (error) => {
+        this.handleError(error);
+      });
   }
 
-  private handleError(error: any): void {
-    console.error('Request failed', error);
-    if (error.status === 401) {
+  private handleError(error: any, callback?: any) {
+
+    let message = '';
+
+    if (error.status === 0) {
+      message = 'Backend server is down';
+    } else if (error.status === 503) {
+      message = error.error?.result?.message || 'Database server down!!';
+    } else if (error.status === 500) {
+      message = 'Internal server error';
+    } else if (error.status === 401) {
+      
       localStorage.clear();
+
       this.router.navigate(['/login'], {
         queryParams: { errorMessage: error.error.error }
+      });
+    }
+
+    const currentRoute = this.router.url.split('?')[0];
+
+    this.router.navigate([currentRoute], {
+      queryParams: {
+        errorMessage: message
+      }
+    });
+
+    if (callback) {
+      callback({
+        success: false,
+        result: { message }
       });
     }
   }
