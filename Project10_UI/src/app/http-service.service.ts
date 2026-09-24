@@ -47,20 +47,24 @@ export class HttpServiceService {
   private handleError(error: any, callback?: any) {
 
     let message = '';
+    const status = Number(error.status);
+    const backendMessage = error.error?.result?.message
+      || error.error?.message
+      || (typeof error.error === 'string' ? error.error : '');
 
-    if (error.status === 0) {
+    if (status === 0) {
 
       message = 'Backend server is down';
 
-    } else if (error.status === 503) {
+    } else if (status === 503) {
 
-      message = error.error?.result?.message || 'Database server down!!';
+      message = backendMessage || 'Database server down!!';
 
-    } else if (error.status === 500) {
+    } else if (status === 500) {
 
-      message = 'Internal server error';
+      message = backendMessage || 'Internal server error';
 
-    } else if (error.status === 401) {
+    } else if (status === 401) {
       
       localStorage.clear();
 
