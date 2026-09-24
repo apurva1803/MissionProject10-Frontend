@@ -37,7 +37,7 @@ export class AuthServiceService implements HttpInterceptor {
           this.router.navigate(['/login'], {
             queryParams: { errorMessage: error.error },
           });
-                    return EMPTY;
+          return EMPTY;
         }
 
         if (error.status === 403) {

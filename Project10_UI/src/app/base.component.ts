@@ -62,6 +62,9 @@ export class BaseCtl implements OnInit {
                 console.log(res.result)
                 _self.form.preload = res.result;
                 console.log(_self.form.preload.roleList)
+            } else {
+                _self.form.error = true;
+                _self.form.message = res.result.message;
             }
         });
     }

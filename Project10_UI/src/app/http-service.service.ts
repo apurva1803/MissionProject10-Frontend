@@ -11,20 +11,24 @@ export class HttpServiceService {
 
   }
 
-  post(endpoint: any, bean: any, callback: any) {
-    return this.httpClient.post(endpoint, bean, {withCredentials : true}).subscribe((data) => {
-      callback(data);
-    }, (error) => {
-      this.handleError(error);
-    });
+  post(endpoint: any, bean: any, callback?: any) {
+    return this.httpClient.post(endpoint, bean).subscribe((data) => {
+         callback(data);
+      },
+      (error) => {
+        this.handleError(error, callback);
+      }
+    );
   }
 
-  get(endpoint: any, callback: any) {
-    return this.httpClient.get(endpoint, {withCredentials : true}).subscribe((data) => {
+  get(endpoint: any, callback?: any) {
+    return this.httpClient.get(endpoint).subscribe((data) => {
       callback(data);
-    }, (error) => {
-      this.handleError(error);
-    });
+      },
+      (error) => {
+        this.handleError(error, callback);
+      }
+    );
   }
 
    getReport(url: string, token: string) {
@@ -49,17 +53,24 @@ export class HttpServiceService {
     let message = '';
 
     if (error.status === 0) {
+
       message = 'Backend server is down';
+
     } else if (error.status === 503) {
+
       message = error.error?.result?.message || 'Database server down!!';
+
     } else if (error.status === 500) {
+
       message = 'Internal server error';
+
     } else if (error.status === 401) {
       
       localStorage.clear();
 
       this.router.navigate(['/login'], {
         queryParams: { errorMessage: error.error.error }
+
       });
     }
 
