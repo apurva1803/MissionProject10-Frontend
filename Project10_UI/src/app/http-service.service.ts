@@ -47,39 +47,21 @@ export class HttpServiceService {
   private handleError(error: any, callback?: any) {
 
     let message = '';
-    const status = Number(error.status);
-    const backendMessage = error.error?.result?.message
-      || error.error?.message
-      || (typeof error.error === 'string' ? error.error : '');
 
-    if (status === 0) {
-
+    if (error.status === 0) {
       message = 'Backend server is down';
-
-    } else if (status === 503) {
-
-      message = backendMessage || 'Database server down!!';
-
-    } else if (status === 500) {
-
-      message = backendMessage || 'Internal server error';
-
-    } else if (status === 401) {
-      
-      localStorage.clear();
-
-      this.router.navigate(['/login'], {
-        queryParams: { errorMessage: error.error.error }
-      });
-      return;
     }
 
-    const currentRoute = this.router.url.split('?')[0];
+    else if (error.status === 503) {
+      message = error.error?.result?.message || 'Database server down!!';
+    }
 
-    this.router.navigate([currentRoute], {
-      queryParams: {
-        errorMessage: message
-      }
+    else if (error.status === 500) {
+      message = 'Internal server error';
+    }
+
+    this.router.navigate([this.router.url], {
+      queryParams: { errorMessage: message }
     });
 
     if (callback) {
