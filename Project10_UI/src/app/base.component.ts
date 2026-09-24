@@ -45,6 +45,14 @@ export class BaseCtl implements OnInit {
 
     ngOnInit(): void {
         console.log("ngOnInit called");
+
+        this.route.queryParams.subscribe(params => {
+            if (params['errorMessage']) {
+                this.form.error = true;
+                this.form.message = params['errorMessage'];
+            }
+        });
+
         this.preload();
 
         const id = this.route.snapshot.paramMap.get('id');

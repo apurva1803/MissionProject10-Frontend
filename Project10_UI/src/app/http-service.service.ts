@@ -11,24 +11,20 @@ export class HttpServiceService {
 
   }
 
-  post(endpoint: any, bean: any, callback?: any) {
-    return this.httpClient.post(endpoint, bean).subscribe((data) => {
-         callback(data);
-      },
-      (error) => {
-        this.handleError(error, callback);
-      }
-    );
+  post(endpoint: any, bean: any, callback: any) {
+    return this.httpClient.post(endpoint, bean, {withCredentials : true}).subscribe((data) => {
+      callback(data);
+    }, (error) => {
+      this.handleError(error);
+    });
   }
 
-  get(endpoint: any, callback?: any) {
-    return this.httpClient.get(endpoint).subscribe((data) => {
+  get(endpoint: any, callback: any) {
+    return this.httpClient.get(endpoint, {withCredentials : true}).subscribe((data) => {
       callback(data);
-      },
-      (error) => {
-        this.handleError(error, callback);
-      }
-    );
+    }, (error) => {
+      this.handleError(error);
+    });
   }
 
    getReport(url: string, token: string) {
@@ -70,8 +66,8 @@ export class HttpServiceService {
 
       this.router.navigate(['/login'], {
         queryParams: { errorMessage: error.error.error }
-
       });
+      return;
     }
 
     const currentRoute = this.router.url.split('?')[0];
