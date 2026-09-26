@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpServiceService } from './http-service.service';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EndpointServiceService } from './endpoint-service.service';
 
 @Injectable({
@@ -11,7 +11,6 @@ export class ServiceLocatorService {
   httpService : any =null;
   router: any = null;
   endpoints : any = null;
-
 
   constructor(private hs : HttpServiceService , private r : Router , private ep : EndpointServiceService)  {
    this.httpService = hs;

@@ -303,19 +303,6 @@
 
             </ul>
 
-            <div class="d-flex align-items-center gap-2 me-2">
-               
-               <select #locale
-                  class="form-select form-select-sm w-auto bg-transparent text-white border-light text-center"
-                  style="text-align-last: center;"
-                  [value]="selectedLocale"
-                  (change)="changeLocale(locale.value)">
-                  <option class="text-center" value="0">Language</option>
-                  <option class="text-center" value="en">{{ 'LocaleSelect.English' | translate }}</option>
-                  <option class="text-center" value="hi">{{ 'LocaleSelect.Hindi' | translate }}</option>
-               </select>
-            </div>
-
             <!-- PROFILE -->
             <div class="dropdown">
                <a class="nav-link dropdown-toggle text-white px-3 py-2"
