@@ -28,6 +28,8 @@ import { ChangepasswordComponent } from './user/changepassword.component';
 import { MyprofileComponent } from './user/myprofile.component';
 import { HotellistComponent } from './hotel/hotellist.component';
 import { HotelComponent } from './hotel/hotel.component';
+import { OnlinevotingComponent } from './onlinevoting/onlinevoting.component';
+import { OnlinevotinglistComponent } from './onlinevoting/onlinevotinglist.component';
 
 
 
@@ -191,6 +193,21 @@ const routes: Routes = [
   {
     path: 'hotellist',
     component: HotellistComponent
+  },
+
+  {
+    path: 'onlinevoting',
+    component: OnlinevotingComponent
+  },
+
+  {
+    path: 'onlinevoting/:id',
+    component: OnlinevotingComponent
+  },
+  
+  {
+    path: 'onlinevotinglist',
+    component: OnlinevotinglistComponent
   },
 
 ];

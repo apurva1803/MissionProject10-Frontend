@@ -19,8 +19,8 @@ export class AuthServiceService implements HttpInterceptor {
   constructor(private router: Router) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (localStorage.getItem('fname') && localStorage.getItem('token')) {
-      this.token = localStorage.getItem('token');
+    this.token = localStorage.getItem('token');
+    if (this.token) {
       req = req.clone({
         setHeaders: {
           withCredentials: 'true',

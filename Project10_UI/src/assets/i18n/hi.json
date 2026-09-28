@@ -121,7 +121,10 @@
         "UseCases": "उपयोग के मामले",
         "AddHotel": "होटल जोड़ें",
         "HotelList": "होटल सूची",
-        "Profile": "प्रोफ़ाइल"
+        "Profile": "प्रोफ़ाइल",
+        "OnlineVoting": "ऑनलाइन मतदान",
+        "OnlineVotingList": "ऑनलाइन मतदान सूची",
+        "AddOnlineVoting": "ऑनलाइन मतदान जोड़ें"
     },
     "LocaleSelect": {
         "Select": "-------चुनें-------",

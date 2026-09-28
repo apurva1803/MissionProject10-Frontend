@@ -57,16 +57,6 @@ export class NavbarComponent {
       return true;
     }
 
-    if (role === 'college') {
-      return ['college', 'student', 'marksheet', 'course', 'subject', 'timetable', 'faculty']
-        .includes(moduleName);
-    }
-
-    if (role === 'faculty') {
-      return ['student', 'subject', 'marksheet', 'timetable']
-        .includes(moduleName);
-    }
-
     if (role === 'student') {
       return ['subject', 'marksheet', 'timetable']
         .includes(moduleName);

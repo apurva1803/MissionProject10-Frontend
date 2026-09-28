@@ -120,7 +120,10 @@
         "UseCases": "Use Cases",
         "AddHotel": "Add Hotel",
         "HotelList": "Hotel List",
-        "Profile": "Profile"
+        "Profile": "Profile",
+        "OnlineVoting": "Online Voting",
+        "OnlineVotingList": "Online Voting List",
+        "AddOnlineVoting": "Add Online Voting"
     },
     "LocaleSelect": {
         "Select": "-------Select-------",

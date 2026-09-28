@@ -20,7 +20,7 @@
       <button class="navbar-toggler me-3 border border-light rounded-3 p-2"
          type="button"
          data-bs-toggle="collapse"
-         data-bs-target="#mainNav">
+         [attr.data-bs-target]="isLogin() ? '#mainNav' : '#guestNav'">
 
          <span class="navbar-toggler-icon"></span>
 
@@ -293,6 +293,20 @@
                      <a class="dropdown-item" [routerLink]="['/hotellist']">
                         <i class="bi bi-building me-2 text-primary"></i>
                         {{ 'Links.HotelList' | translate }}
+                     </a>
+                  </li>
+                  <hr class="dropdown-divider">
+
+                  <li>
+                     <a class="dropdown-item" [routerLink]="['/onlinevoting']">
+                        <i class="bi bi-plus-circle me-2 text-success"></i>
+                        {{ 'Links.AddOnlineVoting' | translate }}
+                     </a>
+                  </li>
+                  <li>
+                     <a class="dropdown-item" [routerLink]="['/onlinevotinglist']">
+                        <i class="bi bi-building me-2 text-primary"></i>
+                        {{ 'Links.OnlineVotingList' | translate }}
                      </a>
                   </li>
 
