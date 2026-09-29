@@ -123,7 +123,10 @@
         "Profile": "Profile",
         "OnlineVoting": "Online Voting",
         "OnlineVotingList": "Online Voting List",
-        "AddOnlineVoting": "Add Online Voting"
+        "AddOnlineVoting": "Add Online Voting",
+        "FoodDelivery": "Food Delivery",
+        "FoodDeliveryList": "Food Delivery List",
+        "AddFoodDelivery": "Add Food Delivery"
     },
     "LocaleSelect": {
         "Select": "-------Select-------",

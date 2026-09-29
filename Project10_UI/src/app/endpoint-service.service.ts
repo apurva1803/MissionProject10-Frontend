@@ -20,4 +20,5 @@ export class EndpointServiceService {
 
   public HOTEL = this.SERVER_URL + "/Hotel";
   public ONLINE_VOTING = this.SERVER_URL + "/OnlineVoting";
+  public FOODDELIVERY = this.SERVER_URL + "/FoodDelivery";
 }

@@ -124,7 +124,10 @@
         "Profile": "प्रोफ़ाइल",
         "OnlineVoting": "ऑनलाइन मतदान",
         "OnlineVotingList": "ऑनलाइन मतदान सूची",
-        "AddOnlineVoting": "ऑनलाइन मतदान जोड़ें"
+        "AddOnlineVoting": "ऑनलाइन मतदान जोड़ें",
+        "FoodDelivery": "भोजन वितरण",
+        "FoodDeliveryList": "भोजन वितरण सूची",
+        "AddFoodDelivery": "भोजन वितरण जोड़ें"
     },
     "LocaleSelect": {
         "Select": "-------चुनें-------",

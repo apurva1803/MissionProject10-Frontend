@@ -16,37 +16,43 @@
                class="bi bi-exclamation-triangle me-2"></i>{{ form.message }}</div>
          
                <div class="mb-3"><label class="form-label fw-bold">{{ 'FirstName' | translate }}<span
-                  class="text-danger">*</span></label><input type="text" name="firstName" class="form-control"
+                  class="text-danger">*</span></label>
+               <input type="text" name="firstName" class="form-control"
                [(ngModel)]="form.data.firstName" placeholder="Enter First Name">
             <div class="text-danger small mt-1" *ngIf="form.inputerror.firstName">{{ form.inputerror.firstName }}</div>
          </div>
 
          <div class="mb-3"><label class="form-label fw-bold">{{ 'LastName' | translate }} <span
-                  class="text-danger">*</span></label><input type="text" name="lastName" class="form-control"
+                  class="text-danger">*</span></label>
+               <input type="text" name="lastName" class="form-control"
                [(ngModel)]="form.data.lastName" placeholder="Enter Last Name">
             <div class="text-danger small mt-1" *ngIf="form.inputerror.lastName">{{ form.inputerror.lastName }}</div>
          </div>
 
          <div class="mb-3"><label class="form-label fw-bold">{{ 'LoginId' | translate }} <span
-                  class="text-danger">*</span></label><input type="text" name="loginId" class="form-control"
+                  class="text-danger">*</span></label>
+               <input type="text" name="loginId" class="form-control"
                [(ngModel)]="form.data.loginId" placeholder="Enter Login ID">
             <div class="text-danger small mt-1" *ngIf="form.inputerror.loginId">{{ form.inputerror.loginId }}</div>
          </div>
          
          <div class="mb-3"><label class="form-label fw-bold">{{ 'Password' | translate }} <span
-                  class="text-danger">*</span></label><input type="password" name="password" class="form-control"
+                  class="text-danger">*</span></label>
+               <input type="password" name="password" class="form-control"
                [(ngModel)]="form.data.password" placeholder="Enter Password">
             <div class="text-danger small mt-1" *ngIf="form.inputerror.password">{{ form.inputerror.password }}</div>
          </div>
          
          <div class="mb-3"><label class="form-label fw-bold">{{ 'DateOfBirth' | translate }} <span
-                  class="text-danger">*</span></label><input type="date" name="dob" class="form-control"
+                  class="text-danger">*</span></label>
+               <input type="date" name="dob" class="form-control"
                [ngModel]="form.data.dob | date:'yyyy-MM-dd'" (ngModelChange)="form.data.dob = $event">
             <div class="text-danger small mt-1" *ngIf="form.inputerror.dob">{{ form.inputerror.dob }}</div>
          </div>
          
          <div class="mb-3"><label class="form-label fw-bold">{{ 'Gender' | translate }} <span
-                  class="text-danger">*</span></label><select name="gender" class="form-select"
+                  class="text-danger">*</span></label>
+               <select name="gender" class="form-select"
                [(ngModel)]="form.data.gender">
                <option [ngValue]="undefined">------------ Select ------------</option>
                <option value="Male">Male</option>
@@ -56,7 +62,8 @@
          </div>
          
          <div class="mb-3"><label class="form-label fw-bold">{{ 'Role' | translate }} <span
-                  class="text-danger">*</span></label><select name="roleId" class="form-select"
+                  class="text-danger">*</span></label>
+               <select name="roleId" class="form-select"
                [compareWith]="compareRoleIds" [(ngModel)]="form.data.roleId">
                <option [ngValue]="undefined">------------ Select ------------</option>
                <option *ngFor="let obj of form.preload?.roleList" [ngValue]="obj.key">{{ obj.value }}</option>

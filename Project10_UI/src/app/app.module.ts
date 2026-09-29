@@ -47,6 +47,8 @@ import { HotelComponent } from './hotel/hotel.component';
 import { HotellistComponent } from './hotel/hotellist.component';
 import { OnlinevotingComponent } from './onlinevoting/onlinevoting.component';
 import { OnlinevotinglistComponent } from './onlinevoting/onlinevotinglist.component';
+import { FooddeliveryComponent } from './fooddelivery/fooddelivery.component';
+import { FooddeliverylistComponent } from './fooddelivery/fooddeliverylist.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -87,7 +89,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     HotelComponent,
     HotellistComponent,
     OnlinevotingComponent,
-    OnlinevotinglistComponent
+    OnlinevotinglistComponent,
+    FooddeliveryComponent,
+    FooddeliverylistComponent
   ],
   imports: [
     BrowserModule,

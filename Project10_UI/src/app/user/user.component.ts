@@ -15,8 +15,8 @@ export class UserComponent extends BaseCtl {
   constructor(
     private locator: ServiceLocatorService,
     route: ActivatedRoute,
-    private httpClient: HttpClient,
-  ) {
+    private httpClient: HttpClient) 
+  {
     super(locator.endpoints.USER, locator, route);
   }
 

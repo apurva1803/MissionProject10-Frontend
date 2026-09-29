@@ -30,6 +30,8 @@ import { HotellistComponent } from './hotel/hotellist.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { OnlinevotingComponent } from './onlinevoting/onlinevoting.component';
 import { OnlinevotinglistComponent } from './onlinevoting/onlinevotinglist.component';
+import { FooddeliveryComponent } from './fooddelivery/fooddelivery.component';
+import { FooddeliverylistComponent } from './fooddelivery/fooddeliverylist.component';
 
 
 
@@ -209,6 +211,18 @@ const routes: Routes = [
     path: 'onlinevotinglist',
     component: OnlinevotinglistComponent
   },
+  {
+    path: 'fooddelivery',
+    component: FooddeliveryComponent
+  },
+  {
+    path: 'fooddelivery/:id',
+    component: FooddeliveryComponent
+  },
+  {
+    path: 'fooddeliverylist',
+    component: FooddeliverylistComponent
+  }
 
 ];
 

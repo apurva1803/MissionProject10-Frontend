@@ -15,7 +15,7 @@ export class HttpServiceService {
     return this.httpClient.post(endpoint, bean, {withCredentials : true}).subscribe((data) => {
       callback(data);
     }, (error) => {
-      this.handleError(error);
+      this.handleError(error, callback);
     });
   }
 
@@ -23,7 +23,7 @@ export class HttpServiceService {
     return this.httpClient.get(endpoint, {withCredentials : true}).subscribe((data) => {
       callback(data);
     }, (error) => {
-      this.handleError(error);
+      this.handleError(error, callback);
     });
   }
 
@@ -60,8 +60,12 @@ export class HttpServiceService {
       message = 'Internal server error';
     }
 
-    this.router.navigate([this.router.url], {
-      queryParams: { errorMessage: message }
+    const currentRoute = this.router.url.split('?')[0];
+
+    this.router.navigate([currentRoute], {
+      queryParams: {
+        errorMessage: message
+      }
     });
 
     if (callback) {
@@ -69,7 +73,9 @@ export class HttpServiceService {
         success: false,
         result: { message }
       });
+      return;
     }
+
   }
 
 }
